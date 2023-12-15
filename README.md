@@ -1,4 +1,5 @@
 # quick-docker-setup
+
 Scripts for easy docker setup
 
 # Usage
@@ -11,7 +12,7 @@ curl -s https://raw.githubusercontent.com/Gavin1937/quick-docker-setup/main/${SC
 
 # Scripts
 
-|       Name     |     System    |
-|----------------|---------------|
-|ubuntu-docker.sh|ubuntu & debian|
-
+| Name                 | System          |
+|----------------------|-----------------|
+| ubuntu-docker.sh     | ubuntu & debian |
+| aws-linux2-docker.sh | AWS Linux 2     |

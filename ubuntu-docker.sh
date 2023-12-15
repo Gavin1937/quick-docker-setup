@@ -1,7 +1,7 @@
 #! /bin/bash -x
 
 # Add Docker's official GPG key:
-sudo apt update -y && sudo apt upgrade -y
+sudo apt update -y
 sudo apt install ca-certificates curl gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -14,6 +14,13 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update -y
 
+# install docker & docker-compose
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose
 
-sudo docker run hello-world
+# add user
+sudo usermod -a -G docker "$USER"
+
+# testing
+docker --version
+docker-compose --version
+docker run hello-world
