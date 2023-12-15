@@ -14,13 +14,14 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update -y
 
-# install docker & docker-compose
+# Install docker & docker-compose
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose
 
-# add user
+# Add user
 sudo usermod -a -G docker "$USER"
+newgrp docker
 
-# testing
+# Testing
 docker --version
 docker-compose --version
 docker run hello-world

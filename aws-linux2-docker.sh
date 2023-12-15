@@ -4,12 +4,17 @@
 sudo yum update -y
 sudo yum install docker -y
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+sudo chmod -v +x /usr/local/bin/docker-compose
 
-# add user
+# Add user
 sudo usermod -a -G docker "$USER"
+newgrp docker
 
-# testing
+# Launch docker.service
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+
+# Testing
 docker --version
 docker-compose --version
 docker run hello-world
