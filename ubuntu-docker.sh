@@ -1,7 +1,7 @@
 #! /bin/bash -e
 
 # Collect metadata
-OSNAME=$(cat /etc/os-release | grep -e ^ID= | cut -d '=' -f 2)
+OSNAME=$(cat "/etc/*-release" | grep -e ^ID= | cut -d '=' -f 2)
 echo "OS name: $OSNAME"
 
 # Add Docker's official GPG key:
