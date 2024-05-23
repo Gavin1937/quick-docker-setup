@@ -1,4 +1,4 @@
-#! /bin/bash -x
+#! /bin/bash -e
 
 # Install docker & docker-compose
 sudo yum update -y
